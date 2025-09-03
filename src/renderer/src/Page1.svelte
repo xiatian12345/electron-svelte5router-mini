@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { goto } from '@mateothegreat/svelte5-router'
+  import { location } from '@wjfe/n-savant'
   import { Button } from 'flowbite-svelte'
 </script>
 
@@ -7,9 +7,9 @@
   This is page1
   <Button
     onclick={() => {
-      console.log('before:', location.href)
-      goto('/page2')
-      console.log('after:', location.href)
+      console.log('before:', location.url.href)
+      location.navigate('/page2')
+      console.log('after:', location.url.href)
     }}>goto page2</Button
   >
 </div>
